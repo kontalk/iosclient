@@ -60,7 +60,6 @@
 		65C1C27F21B2FADC0068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		65C1C28021B2FADC0068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		65C1C28721B2FBA40068F728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		65C1C28921B2FBA70068F728 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65C1C28A21B2FBA80068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B90D0F80E77392E624A69E9B /* Pods-KontalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KontalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KontalkTests/Pods-KontalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBF89E28E0D451F5C8A29E96 /* Pods_KontalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KontalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,7 +454,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				65C1C28721B2FBA40068F728 /* Base */,
-				65C1C28921B2FBA70068F728 /* en */,
 				65C1C28A21B2FBA80068F728 /* it */,
 			);
 			name = Localizable.strings;
