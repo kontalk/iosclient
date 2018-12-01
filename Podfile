@@ -6,7 +6,10 @@ target 'Kontalk' do
   use_frameworks!
 
   # Pods for Kontalk
-  pod 'XMPPFramework'
+  pod 'XMPPFramework/Swift'
+  pod 'SwiftyBeaver'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'KontalkTests' do
     inherit! :search_paths

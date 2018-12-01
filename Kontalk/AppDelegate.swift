@@ -8,15 +8,29 @@
 
 import UIKit
 import CoreData
+import Fabric
+import Crashlytics
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //INIT Fabric
+        Fabric.with([Crashlytics.self])
+        
+        //INIT SwiftyBeaver
+        let console = ConsoleDestination()  // log to Xcode Console
+        // use custom format and set console output to short time, log level & message
+        console.format = "$DHH:mm:ss$d $L $M"
+        // or use this for JSON output: console.format = "$J"
+        
+        // add the destinations to SwiftyBeaver
+        log.addDestination(console)
         return true
     }
 
