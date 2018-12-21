@@ -5,3 +5,701 @@
   Created by Andrea Cappelli on 01/12/2018.
   Copyright © 2018 Andrea Cappelli. All rights reserved.
 */
+
+"app_name"="Kontalk";
+"app_name_offline"="Kontalk (offline)";
+"app_description"="Community-driven instant messaging network";
+"service_name"="Message Center";
+"authenticator_name"="Authentication Service";
+"sync_service_name"="Sync Contacts";
+"download_service"="Download Service";
+"ok"="OK";
+"yes"="Yes";
+"no"="No";
+"send"="Send";
+"menu_compose"="Compose";
+"menu_create_group"="Create group";
+"menu_delete_all"="Delete chats";
+"menu_search"="Search";
+"mykey_activity_title"="My personal key";
+"menu_settings"="Settings";
+"menu_offline"="Go offline";
+"menu_online"="Go online";
+"menu_import_key"="Import key";
+"menu_import_device"="Register from another device";
+"menu_manual_verification"="Already have a code?";
+"pref_account_settings"="Account";
+"pref_network_settings"="Network";
+"pref_network_uri"="Manual server address";
+"pref_title_network_uri"="This will override server list automatic management";
+"number_validation_intro1"="Please enter your name, select your country code and input your mobile phone number. More instructions will be provided in the next screen.";
+"number_validation_intro2"="If you are unable to receive calls or SMS on this device, insert a phone number you own: we will associate that number to this device.";
+"code_validation_intro"="You should receive a SMS or a call to your number briefly.";
+"code_validation_intro2"="Please insert the code you receive or hear below.";
+"code_validation_intro3"="Please note that SMS or call might come from a foreign number.";
+"code_validation_intro_missed_call"="You should receive a missed call to your number briefly. PLEASE DO NOT ANSWER THE CALL.";
+"code_validation_intro2_missed_call"="Please insert the last %d digits of the number you will be called by.";
+"code_validation_intro_callerid"="Tap the button below and give a missed call to that phone number. Please note that the call must be initiated from the phone number you are registering. The call is free of charge if you hang up as soon as you hear the first ring. It will be enough for us.";
+"code_validation_intro2_callerid"="After closing the call, come back here and tap the verify button below.";
+"code_validation_intro_manual"="Please insert the verification code you received. Please note that a verification code can be used only once.";
+"hint_validation_name"="Your name";
+"hint_validation_number"="Your number";
+"hint_validation_code"="Verification code";
+"warn_invalid_number"="Please enter a valid phone number.";
+"msg_validating_phone"="Requesting registration&#8230;";
+"msg_importing_key"="Importing personal key&#8230;";
+"title_confirm_cancel_registration"="Cancel registration?";
+"confirm_cancel_registration"="If you go back you\'ll have to start registration from scratch. If you need to switch to another app, just use the device home button.";
+"msg_initializing"="Registering to the Kontalk network&#8230;";
+"msg_authenticated"="Registered to the network!";
+"share"="Share";
+"resend"="Send again";
+"copy_message_text"="Copy text";
+"delete_message"="Delete message";
+"confirm_delete_all"="Delete all chats";
+"confirm_will_delete_all"="All chats will be deleted.";
+"sending_message"="Sending message&#8230;";
+"message_text_copied"="Message text copied.";
+"call"="Call";
+"mark_read"="Read";
+"reply"="Reply";
+"open_conversation"="View";
+"view_contact"="View contact";
+"view_conversation"="View chat";
+"delete_thread"="Delete chat";
+"menu_ctx_archive_threads"="Archive";
+"menu_ctx_unarchive_threads"="Unarchive";
+"menu_ctx_delete_threads"="Delete";
+"menu_ctx_sticky"="Favorite";
+"delete_thread_messages"="Delete chat history";
+"confirm_delete_thread"="Delete chat";
+"confirm_will_delete_thread"="The entire chat will be deleted.";
+"new_messages"="New messages";
+"only_one_account_supported"="Only one Kontalk account is supported.";
+"hint_enter_text"="Enter your text here";
+"hint_type_to_compose"="Type to compose";
+"hint_open_kbd_to_compose"="Open keyboard to compose message";
+"view_image"="View image";
+"title_message_options"="Message options";
+"menu_message_details"="Details";
+"title_message_details"="Message details";
+"message_type_label"="Type:\u0020";
+"text_message"="Text message";
+"location_message"="Location message";
+"image_message"="Image message";
+"audio_message"="Audio message";
+"from_label"="From:\u0020";
+"to_address_label"="To:\u0020";
+"sent_label"="Sent:\u0020";
+"received_label"="Received:\u0020";
+"error_label"="Error:\u0020";
+"sending_label"="Sending:\u0020";
+"refused_label"="Not accepted:\u0020";
+"notdelivered_label"="Not delivered:\u0020";
+"delivered_label"="Delivered:\u0020";
+"encrypted_label"="Encrypted:\u0020";
+"security_label"="Security:\u0020";
+"size_label"="Size:\u0020";
+"size_unknown"="(unknown)";
+"title_file_info"="File information";
+"pref_restart_msgcenter"="Restart message center";
+"pref_title_restart_msgcenter"="Use this if Kontalk is not working properly";
+"pref_idle_time"="Disconnect when idle";
+"pref_title_idle_time"="How long to wait before disconnecting for inactivity";
+"pref_wakeup_time"="Reconnect to server";
+"pref_title_wakeup_time"="How long to wait before reconnecting to the server after an inactivity period. Used only if push notifications are not available or network quality is very bad";
+"pref_maintenance"="Maintenance";
+"pref_regenerate_keypair"="Regenerate personal key";
+"pref_title_regenerate_keypair"="Use this in case your personal key has been compromised";
+"pref_regenerate_keypair_confirm"="A new key pair will be generated and assigned to your account. Your old key will become invalid.";
+"contacts_list_title"="Choose a contact";
+"position_screen_title"="Position";
+"pref_messaging_settings"="Messaging";
+"pref_privacy_settings"="Privacy";
+"pref_encrypt"="Encrypt messages";
+"pref_encrypt_userdata"="Encrypt personal data";
+"pref_title_on_encrypt_userdata"="Status message will be visible only to users having your phone number";
+"pref_title_off_encrypt_userdata"="Status message will be visible to anyone";
+"pref_auto_accept_subscriptions"="Automatically accept invitations";
+"pref_send_typing"="Send typing notification";
+"pref_hide_presence"="Hide presence";
+"pref_title_on_hide_presence"="Users will not see you online";
+"pref_title_off_hide_presence"="Users will see you online and when you last connected";
+"contact_not_registered"="Contact seems not to be registered on Kontalk.";
+"error_store_outbox"="Unable to store message to outbox. Maybe your memory is full?";
+"error_delete_thread"="Unable to delete thread.";
+"error_delete_message"="Unable to delete message.";
+"decrypt_message"="Decrypt message";
+"download_file"="Download file";
+"download_again"="Download again";
+"download"="Download";
+"download_cancel"="Cancel download";
+"has_draft"="Draft";
+"pref_update_server_list"="Update server list";
+"server_list_last_update"="Last update: %s";
+"pref_title_push_notifications"="Use push notifications if server supports it, saves battery";
+"pref_push_notifications"="Push notifications";
+"pref_push_notifications_disabled"="Disabled";
+"pref_push_notifications_title_default"="Push notifications are a server-assisted technology to save battery. It does not affect real-time delivery of messages.\n\nWhen disabled, Kontalk connection behavior can be fine tuned in the network settings screen.";
+"pref_push_notifications_title_disabled"="Push notifications support was not included in this version.";
+"pref_push_notifications_title_unavailable"="Push notifications are not supported on this device.";
+"hint_search_full"="Search messages";
+"hint_search_quickbox"="Text in your messages";
+"title_search"="Search: \"%s\"";
+"text_search_results_empty"="No messages found.";
+"pref_notification_settings"="Notifications";
+"pref_enable_notifications"="Notifications";
+"pref_enable_notification_led"="Notification LED";
+"pref_notification_led_color"="Notification LED color";
+"pref_title_enable_notifications"="Display message notifications in status bar";
+"pref_ringtone"="Select ringtone";
+"pref_vibrate"="Vibrate";
+"pref_title_vibrate"="Also vibrate when notified";
+"confirm_delete_message"="Delete message";
+"confirm_will_delete_message"="The message will be deleted.";
+"confirm_will_delete_messages"="The selected messages will be deleted.";
+"title_user_exists"="User exists";
+"err_authentication_failed"="Verification code refused. Authentication failed.";
+"err_authentication_failed_callerid"="Verification wasn\'t successful. Try to call the number again and wait a little longer.";
+"err_validation_failed"="Phone number verification failed.";
+"err_validation_retry_later"="Too many attempts. Please wait a few minutes and try again.";
+"msg_validation_canceled"="Verification canceled. You might receive a SMS anyway.";
+"err_validation_error"="An error occurred during verification. Please try again later.";
+"err_validation_nonetwork"="No Internet connection is available. Kontalk requires an active Internet connection to work.";
+"err_validation_network_error"="Unable to connect to server. Please try again later.";
+"err_validation_server_not_supported"="Selected server does not support registration. Please configure another one in Settings screen.";
+"err_validation_user_exists"="The number you are using is already registered to Kontalk. If you have registered another device, proceeding in this manner will cut it off from Kontalk. If you are registering another device of yours, choose transfer account.";
+"text_encrypted"="(encrypted)";
+"peer_unknown"="(unknown)";
+"msg_draft_saved"="Message saved as draft.";
+"send_mime_not_supported"="File type not supported.";
+"button_validate"="Register";
+"button_validation_register"="Verify";
+"button_validation_fallback"="Not receiving anything?";
+"button_validation_fallback_callerid"="Try another way";
+"notify_ticker_download_completed"="Download completed";
+"notify_title_download_completed"="Download completed";
+"notify_text_download_completed"="Attachment download completed";
+"notify_ticker_download_error"="Download failed";
+"notify_title_download_error"="Download error";
+"notify_text_decryption_error"="Decryption failed";
+"notify_text_download_error"="Attachment download failed";
+"notify_ticker_upload_error"="Upload failed";
+"notify_title_upload_error"="Upload error";
+"notify_text_upload_error"="Attachment upload failed";
+"title_invalid_number"="Invalid number";
+"err_store_message_failed"="Unable to store message to outbox.";
+"msg_invalid_number"="Please insert a valid phone number.";
+"msg_invalid_cc"="Please select a country.";
+"msg_register_confirm_number1"="We will verify the phone number:";
+"msg_register_confirm_number2"="Please double check that the number is correct.";
+"title_invalid_code"="Invalid code";
+"msg_invalid_code"="Please insert a valid code.";
+"title_nonetwork"="No internet connection";
+"title_fallback"="Having problems?";
+"msg_fallback"="We\'ll try another way to verify your phone number.";
+"title_no_name"="Your name";
+"msg_no_name"="Please insert a name.";
+"menu_refresh"="Refresh";
+"menu_invite"="Invite users";
+"title_error"="Error";
+"person_me"="Me";
+"msg_do_refresh"="Refresh to update contact list.";
+"msg_sync_progress"="Refreshing contacts list&#8230;";
+"err_sync_failed"="Unable to refresh contacts list. Please retry later.";
+"err_sync_nonetwork"="Network not available. Please retry later.";
+"text_invite_message"="Hey! Check out Kontalk, a free messaging app! http://kontalk.org/";
+"text_contacts_empty"="New users will be automatically added to this list.\n\nUse Menu Invite users to send an invitation message to someone.";
+"text_conversations_empty"="To start writing messages use the new message button below.";
+"text_archived_conversations_empty"="To archive chats, select them from the main screen and use the archive button in the toolbar.";
+"notify_ticker_external_storage"="External storage not available";
+"notify_text_external_storage"="Unable to write to external storage.";
+"title_user_not_found"="User not found";
+"message_user_not_found"="Contact seems not to be registered on Kontalk. You can try to contact the user anyway or send him/her an invitation message.";
+"yes_user_not_found"="Contact user anyway";
+"no_user_not_found"="Send invite";
+"pref_appearance_settings"="Appearance";
+"pref_font_size"="Font size";
+"menu_status"="Status";
+"menu_attachment"="Attach";
+"menu_smileys"="Smileys";
+"menu_invite_group"="Add users";
+"menu_start_group"="Start group";
+"menu_group_info"="Group info";
+"menu_set_group_subject"="Set group subject";
+"menu_leave_group"="Leave group";
+"menu_block_user"="Block";
+"menu_unblock_user"="Unblock";
+"menu_encryption"="Encryption";
+"vcard_message"="vCard message";
+"open_file"="Open file";
+"open_audio"="Play audio file";
+"msg_msgcenter_restarted"="Message center restarted.";
+"downloading_attachment"="Downloading attachment&#8230;";
+"decrypting_attachment"="Decrypting attachment&#8230;";
+"attachment_download"="Attachment download";
+"attachment_upload"="Attachment upload";
+"seen_moment_ago_label"="a moment ago";
+"seen_online_label"="active";
+"seen_away_label"="online";
+"seen_offline_label"="offline";
+"seen_typing_label"="typing&#8230;";
+"seen_group_typing_label_one"="%s is typing&#8230;";
+"seen_group_typing_label_two"="%1$s and %2$s are typing&#8230;";
+"seen_group_typing_label_more"="%d people are typing&#8230;";
+"invitation_sent_label"="pending invitation";
+"pref_custom_background"="Custom background";
+"pref_background_uri"="Background";
+"pref_title_background_uri"="Set custom conversations background image";
+"pref_title_custom_background"="Pick a background using the option below";
+"err_custom_background"="An error occurred while setting the background. Please try another image.";
+"err_attachment_corrupted"="Unable to download attachment. Message might be corrupted.";
+"serverlist_updating"="Updating server list&#8230;";
+"serverlist_update_error"="Unable to download server list. Please retry later.";
+"serverlist_update_nodata"="No available server list found.";
+"serverlist_update_nonetwork"="Network not available. Please retry later.";
+"serverlist_update_offline"="Offline mode is enabled.";
+"pref_emoji_converter"="Convert smileys to emojis";
+"pref_title_emoji_converter"="Automatically convert some text smileys to emojis";
+
+"pref_vibrate_label_always"="Always";
+"pref_vibrate_label_silent"="Only when silent";
+"pref_vibrate_label_never"="Never";
+"pref_fontsize_label_small"="Small";
+"pref_fontsize_label_medium"="Medium";
+"pref_fontsize_label_large"="Large";
+"pref_balloon_label_hangout"="Hangout";
+"pref_balloon_label_silence"="Silence";
+"pref_balloon_label_classic"="Classic";
+"pref_balloon_label_classic_old"="Classic (old)";
+"pref_balloon_label_iphone"="iPhone";
+"pref_text_enter_label_default"="Default";
+"pref_text_enter_label_newline"="Enter";
+"pref_text_enter_label_newline_send"="Send";
+"pref_image_resize_label_original"="Original";
+"pref_image_resize_label_small"="Small (0.4MP)";
+"pref_image_resize_label_medium"="Medium (1.0MP)";
+"pref_image_resize_label_large"="Large (2.0MP)";
+"pref_idle_time_label_never"="Never";
+"pref_idle_time_label_5m"="5 minutes";
+"pref_idle_time_label_15m"="15 minutes";
+"pref_idle_time_label_30m"="30 minutes";
+"pref_idle_time_label_1h"="1 hour";
+"pref_wakeup_time_label_5m"="5 minutes";
+"pref_wakeup_time_label_15m"="15 minutes";
+"pref_wakeup_time_label_30m"="30 minutes";
+"pref_wakeup_time_label_1h"="1 hour";
+"pref_wakeup_time_label_3h"="3 hours";
+"pref_maps_google_label"="Google Maps";
+"pref_maps_osm_label"="OpenStreetMap";
+
+"pref_remove_prefix"="Dial prefix";
+"pref_change_passphrase"="Change personal key password";
+"pref_title_remove_prefix"="Remove some dial prefix in Kontalk to match phone numbers correctly";
+"pref_export_keypair"="Export personal key";
+"msg_import_keypair"="Kontalk will import your keys from %s in your external storage. Be sure that the file exists and it\'s a valid exported keys archive.";
+"msg_import_keypair_complete"="Personal key import completed.";
+"err_import_keypair_failed"="Personal key import failed.";
+"err_import_keypair_uid_mismatch"="Imported key doesn\'t match the phone number you entered.";
+"err_import_keypair_read"="Unable to read personal key from external storage.";
+"title_passphrase"="Password";
+"title_passphrase_request"="Personal key password";
+"err_invalid_passphrase"="Wrong password. Restart the app to try another one.";
+
+"msg_status_sending"="Sending";
+"msg_status_sent"="Sent";
+"msg_status_notaccepted"="Refused";
+"msg_status_notdelivered"="Not delivered";
+"msg_status_delivered"="Delivered";
+"msg_status_encrypted"="Encrypted";
+
+"pref_balloons"="Chat balloon theme";
+"pref_balloons_groups"="Group chat balloon theme";
+
+"attachment_camera"="Camera";
+"attachment_picture"="Gallery";
+"attachment_contact"="Contact";
+"attachment_audio"="Audio";
+"attachment_video"="Video";
+"attachment_file"="File";
+"attachment_vcard"="Contact";
+"attachment_location"="Location";
+
+"notification_location"="sent you a location";
+"location_no_result"="No results";
+"places_nearby"="Places nearby";
+"send_selected_location"="Send selected location";
+"send_location"="Send your current location";
+"accurate_to"="Accurate to %1$s meters";
+"meters_away"="%d m away";
+"kilometers_away"="%.2f km away";
+"loading"="Loading…";
+"your_position"="You";
+"err_googlemaps_fallback_osm"="Google Maps is not available, falling back to OpenStreetMap.";
+"err_location_no_providers"="No location providers available. Current location will not be available.";
+"err_location_access_unknown_error"="Unable to request location services activation.";
+"err_location_permission"="Access to location was denied.";
+"msg_location_disabled"="We need access to location. Choose OK to go to settings and enable it.";
+
+"menu_open_map"="Open in maps";
+"menu_map"="Map";
+"menu_satellite"="Satellite";
+
+"msg_not_implemented"="Not implemented yet.";
+
+"chooser_send_picture"="Send picture";
+"chooser_error_no_camera"="External storage not available. Taking picture from camera will not be enabled.";
+"chooser_error_no_camera_app"="No camera app available.";
+"chooser_error_no_gallery_app"="No gallery app available.";
+"chooser_error_no_app"="No suitable app available to open the file.";
+
+"chooser_error_no_dialer"="No dialer app available to call or no telephony available on this device.";
+"chooser_error_no_browser"="No browser available to open link.";
+"chooser_select_link"="Choose action";
+
+"status_activity_title"="Status message";
+"hint_status_entry"="Type your status message here";
+"header_recent_status"="Recently used status messages";
+
+"title_offline_mode_warning"="Offline mode";
+"message_offline_mode_warning"="In offline mode Kontalk will not connect to the server until you go back to online mode. You will not be able to send or receive messages and users will see you as offline.";
+
+"warning_offline_mode"="Offline mode is active. Messages will be sent when back online.";
+"going_offline"="Going offline.";
+"going_online"="Going online.";
+
+"pref_other"="Other";
+"pref_help"="Help";
+"pref_donate"="Donate";
+"pref_about"="About";
+
+"title_about"="About";
+"title_donation"="Donate";
+"title_credits"="Credits";
+
+"about_version"="%1$s (%2$d)";
+
+"social_twitter"="Twitter";
+"social_googleplus"="Google Plus";
+"social_facebook"="Facebook";
+"social_identica"="Identi.ca";
+
+"donate_text"="Kontalk needs money to keep running. Please consider a donation, even a small one.";
+"title_bitcoin_dialog"="Bitcoin";
+"text_bitcoin_dialog"="Bitcoin address:\n%s";
+"donate_wallet"="Google Play";
+"donate_paypal"="PayPal";
+"donate_bitcoin"="Bitcoin";
+"donate_flattr"="Flattr";
+
+"msg_generating_keypair"="Generating personal key in the background.";
+"msg_gen_keypair_complete"="Personal key regeneration completed.";
+"notify_gen_keypair_ticker"="Generating personal key&#8230;";
+"notify_gen_keypair_title"="Generating personal key";
+"notify_gen_keypair_text"="You can continue to work normally.";
+
+"msg_xmpp_upgrading"="Upgrading&#8230;";
+"title_no_personal_key"="No personal key";
+"msg_no_personal_key"="A personal key is currently unavailable (probably because you just upgraded). You will not be able to login into the Kontalk network if you don\'t generate a personal key. Please insert your name by closing Kontalk and opening it again.";
+"msg_keypair_exported"="Personal key and login certificate exported to external storage.";
+"err_keypair_export_write"="Unable to write personal key to external storage.";
+"err_keypair_export_other"="Unable to export personal key.";
+
+"security_status_good"="good";
+"security_status_bad"="bad";
+
+"security_error_invalid_signature"="\u0020(invalid signature)";
+"security_error_invalid_sender"="\u0020(invalid sender)";
+"security_error_invalid_recipient"="\u0020(invalid recipient)";
+"security_error_invalid_timestamp"="\u0020(invalid timestamp)";
+"security_error_invalid_data"="\u0020(invalid data)";
+"security_error_decrypt_failed"="\u0020(decryption failed)";
+"security_error_integrity_check"="\u0020(integrity check)";
+"security_error_public_key_unavail"="\u0020(public key unavailable)";
+
+"invite_notification"="is inviting you to chat";
+"title_invitation"="Chat invitation";
+"text_invitation1"="Request by:";
+"text_invitation2"="Fingerprint:";
+"button_accept"="Accept";
+"button_refuse"="Refuse";
+"button_block"="Block";
+"button_ignore"="Ignore";
+"button_identity"="Identity";
+"button_private_chat"="Private chat";
+"text_invitation_info"="(chat invitation)";
+"title_identity"="Identity";
+"title_identity_self"="Identity (this is you!)";
+
+"msg_connecting_iab"="Connecting to Google Play&#8230;";
+"msg_iab_thankyou"="Thank you!";
+"msg_iab_thankyou_warning"="Something went wrong, but the donation went through. Thank you!";
+
+"iab_error_setup"="Error during in-app billing setup (%d)";
+"iab_error_query"="Failed to query in-app billing inventory (%d)";
+
+"copy_clipboard"="Copy to clipboard";
+"bitcoin_clipboard_copied"="Bitcoin address copied to clipboard.";
+
+"warn_no_personal_key"="Unable to load personal key. Disable encryption from settings to send message anyway.";
+"warn_no_public_key"="Unable to find a public key for this user. Try refreshing your contact list or disable encryption from settings to send message anyway.";
+"warn_encryption_failed"="Unable to encrypt message. Disable encryption from settings to send message anyway.";
+"warn_not_subscribed"="Unable to send message. User has not accepted your invitation yet.";
+
+"pref_sync_sim_contacts"="Sync from SIM contacts";
+"pref_title_sync_sim_contacts"="Include SIM contacts when checking for registered users";
+
+"pref_sync_invisible_contacts"="Include invisible contacts";
+"pref_title_sync_invisible_contacts"="Include contacts not displayed in Contacts app. Enable if you use DAVDroid";
+
+"pref_server_messages"="Receive server messages";
+"pref_title_server_messages"="Allow messages from server administrators. You might miss important news if you disable this";
+
+"pref_accept_any_certificate"="Accept any SSL certificate";
+
+"pref_delete_account"="Delete your account";
+"msg_delete_account"="Deleting your account will also delete all your messages. Your account on the server will be deleted automatically after a few weeks.";
+"msg_delete_account_progress"="Deleting your account&#8230;";
+
+"msg_user_blocked"="User has been blocked.";
+"msg_user_unblocked"="User has been unblocked.";
+"title_block_user_warning"="Really block this user?";
+"msg_block_user_warning"="You\'re about to block this user. If you do so, this user won\'t be able to send you any message or media until you unblock him/her. This user also won\'t be able to see your status or last known presence and you won\'t be able to see his/her status too. As a side effect, you won\'t be able to send any message or media to him/her either.";
+"title_unblock_user_warning"="Really unblock this user?";
+"msg_unblock_user_warning"="You\'re about to unblock this user. Unblocking will allow him/her to send messages to you and see your status and last known presence.";
+
+"title_disable_encryption"="Disable encryption for this chat?";
+"msg_disable_encryption"="All new messages sent in this chat will NOT be encrypted.\nDisable encryption only if your contact does not have a personal key.";
+"menu_disable_encryption"="Disable";
+
+"notification_text_more"="Tap here to know more";
+
+"title_auth_error"="Authentication error";
+"msg_auth_error"="Authentication to a Kontalk server failed the last time we tried to connect. It could be a temporary server failure or, most probably, the server is refusing your personal key. We recommend deleting your Kontalk account from Android system settings and register again (you will lose all of your Kontalk messages though).";
+
+"notification_ticker_service_running"="Kontalk is running in the background";
+"notification_text_service_running"="Tap to open";
+
+"warn_invite_no_app"="No application available to invite users.";
+
+"pref_text_enter"="Enter button";
+"pref_title_text_enter"="Select behavior of enter button in keyboard";
+
+"title_password1"="Password:";
+"title_password2"="Confirm password:";
+
+"err_password_too_short"="Password must be at least %d characters.";
+"err_passwords_mismatch"="Passwords do not match!";
+"err_password_invalid"="Wrong password.";
+
+"hint_record"="Tap the mic to begin recording.";
+"hint_ptt"="Tap and hold the mic to record.";
+"err_change_passphrase"="Unable to change the personal key password.";
+"err_file_not_found"="File not found.";
+"err_audio_record"="Error starting audio recording.";
+"err_audio_record_permission"="Access to microphone was denied.";
+"err_audio_record_writing_permission"="Access to external storage was denied.";
+"err_audio_record_writing"="Error writing on external storage.";
+"err_audio_record_noaudio"="No audio was recorded.";
+"err_playing_audio"="Error playing audio.";
+"err_playing_sdcard"="Error reading from external storage.";
+"slide_to_cancel"="SLIDE TO CANCEL";
+
+"pref_media_settings"="Media";
+"pref_image_resize"="Resize images";
+"pref_media_autodownload_threshold"="Automatic download threshold";
+"pref_title_media_autodownload_threshold"="Files smaller than this size will always be downloaded automatically";
+"pref_msg_media_autodownload_threshold"="Enter a value in KB. Set to 0 to never download automatically.";
+
+"pref_media_autodownload"="Download automatically";
+"pref_media_autodownload_label_never"="Never";
+"pref_media_autodownload_label_wifi"="Only on Wi-Fi";
+"pref_media_autodownload_label_always"="Always";
+
+"pref_location_settings"="Location";
+"pref_maps_service"="Service provider";
+
+"pref_on"="On";
+"pref_off"="Off";
+
+"err_server_invalid_format"="Invalid address format.";
+
+"err_no_contacts_app"="No contacts app found.";
+"err_no_contact"="Contact not found.";
+
+"warning_button_details"="DETAILS";
+"warning_older_version"="Your buddy is using an older version of Kontalk. Some features might not work correctly.";
+"warning_public_key_changed"="Personal key changed";
+"title_public_key_changed_warning"="Personal key changed";
+"msg_public_key_changed_warning"="Please verify with the user that he/she reinstalled Kontalk or regenerated his/her key intentionally, otherwise communication could be compromised!";
+"warning_public_key_unknown"="Personal key not yet verified";
+"title_public_key_unknown_warning"="Verify personal key";
+"msg_public_key_unknown_warning"="Please verify with the user that his/her fingerprint matches the one displayed in the identity dialog, otherwise communication could be compromised!";
+"warning_public_key_group_unverified"="Identity of some group members have not been verified.";
+
+"warning_user_blocked"="You blocked this user.";
+
+"about_credits_devteam"="Kontalk is brought to you by:";
+"about_credits_gfx"="Graphics/Icons";
+"about_credits_contrib"="Contributors";
+"about_credits_translators"="Translators";
+
+"pref_show_blocked_users"="Show blocked users";
+"button_load_next_page"="Load more messages";
+
+"group_untitled"="Untitled group";
+"title_group_subject"="Group subject";
+"group_command_create"="Group created:";
+"group_command_self_parted"="You left the group.";
+"group_command_user_parted"="%s left the group.";
+"group_command_owner_parted"="The owner (%s) left the group. No one can add or remove members.";
+"group_command_subject"="Group subject set to: %s";
+"group_command_users_added"="Users added:";
+"group_command_users_removed"="Users removed:";
+
+"group_command_text_create"="Group created";
+"group_command_text_subject"="Group subject changed";
+"group_command_text_part"="Someone left this group";
+"group_command_text_part_self"="You left this group";
+"group_command_text_part_kicked"="You were removed from this group";
+"group_command_text_add_remove"="Someone was added or removed";
+
+"groupinfo_activity_title"="Group info";
+
+"group_info_set_title"="Change subject";
+"group_info_leave"="Leave group";
+"group_info_members"="Group members";
+"group_info_ignore_all"="Ignore all";
+"group_info_owner_member"="Owner";
+"confirm_will_leave_group"="You won\'t be able to enter this group again after you leave.";
+"leave_group_delete_messages"="Also delete chat history";
+"group_info_menu_remove"="Remove";
+"group_info_menu_add_again"="Add again";
+
+"title_ignore_all_identities"="Ignore all identities?";
+"msg_ignore_all_identities"="All unverified identities will be marked as ignored.";
+"learn_more"="Learn more";
+
+"text_group_command_fallback"="This is a group chat message. You\'re using an old version of Kontalk or your client doesn\'t support the group chat protocol. Please upgrade to the latest version!";
+
+"title_huawei_protected_apps"="Huawei Protected Apps";
+"msg_huawei_protected_apps"="Kontalk requires to be enabled in Protected Apps to function properly.";
+"btn_huawei_protected_apps"="Protected Apps";
+"title_doze_mode"="Battery optimization";
+"msg_doze_mode"="Kontalk requires to be whitelisted from battery optimization to function properly. We promise we won\'t hog your battery.";
+"btn_request_doze_mode_whitelist"="Request permission";
+"msg_request_doze_failed_manual"="Please mark Kontalk as not optimized in the next screen.";
+"msg_request_doze_failed_all"="Couldn\'t find battery optimization settings, bringing you to system settings.";
+
+"status_label"="Status:\u0020";
+"trust_unknown"="Not verified";
+"trust_ignored"="Ignored";
+"trust_verified"="Verified";
+"status_notsubscribed"="Not allowed/Blocked";
+
+"action_compose"="New chat";
+"action_compose_group"="New group";
+
+"pref_reporting"="Send anonymous usage statistics";
+"pref_title_reporting"="Including crash reports";
+
+"delete_threads_leave_any_groups"="Also leave any groups";
+
+"delete_threads_groups_disclaimer"="Group chats will only have their chat history deleted unless the checkbox above is selected.";
+"check_dont_show_again"="Do not show again";
+
+"pref_foreground_service"="Enable foreground service";
+"pref_title_foreground_service"="Activate this if you want Kontalk to be active in the background when going low on resources. A sticky notification will be displayed";
+"pref_title_foreground_service_mandatory"="Kontalk requires this settings to work correctly on this device";
+
+"menu_import_messages"="Import messages";
+
+"pref_debug_log"="Enable debug log";
+"pref_send_debug_log"="Send debug log";
+"pref_copy_database"="Copy database";
+"msg_copy_database_success"="Database copied to: %s";
+"msg_copy_database_failed"="Database copy failed: %s";
+
+"registration_poweredby"="Powered by";
+"registration_accept_terms_title"="Accept service terms?";
+//"registration_accept_terms_text"="<![CDATA[Server at <b="%1$s</b=" is requesting to <a href="%2$s"="accept terms of service</a=".]]="";
+
+"audio_duration_max"="%1$s / %2$s";
+
+"pref_register_device"="Register device";
+"register_device_title"="Register device";
+"register_device_instructions"="Shoot the bar code below or input the following data manually from your other device.";
+"register_device_request_error"="Error requesting device registration.";
+"register_device_requesting"="Requesting registration&#8230;";
+"register_device_nonetwork"="Network not available. Please retry later.";
+"register_device_offline"="Offline mode is enabled.";
+
+"import_device_title"="Import account";
+"import_device_instructions"="Input the requested data below as it appears on your other device.";
+"import_device_hint_account"="Phone number";
+"import_device_hint_server"="Server name";
+"import_device_hint_token"="Secret code";
+"err_import_device_fill_all"="Please fill in all fields.";
+"import_device_requesting"="Requesting account&#8230;";
+"import_device_invalid_barcode"="No valid data found in the barcode.";
+"import_device_scan_screen_title"="Scan secret code";
+"import_device_btn_scan"="Scan barcode";
+"import_device_btn_input"="Input manually";
+"import_device_message"="Open Kontalk on the other device, choose menu &gt; Settings &gt; Maintenance &gt; Register device. A secret code and a barcode representing it will be displayed.";
+
+"btn_device_overwrite"="I lost my old account or device";
+"btn_device_import"="Transfer account";
+
+"contactinfo_activity_title"="Contact info";
+"contactinfo_last_seen"="last seen %s";
+"contactinfo_phone_number"="Phone number";
+"contactinfo_fingerprint"="Fingerprint";
+"contactinfo_userid"="User ID";
+
+"btn_reply_cancel_description"="Cancel reply";
+"reply_message_deleted"="Message was deleted.";
+
+"title_archived_threads"="Archived chats";
+"footer_archived_threads"="Archived chats (%d)";
+
+"notification_group_title"="%1$s @ %2$s";
+
+"err_validation_contacts_denied"="Kontalk needs access to contacts in order to function properly. How can it know the people you can chat with??\nYou may cancel now, but you will be asked again once you\'ve registered.";
+"err_contacts_denied"="Kontalk needs access to contacts in order to function properly. How can it know the people you can chat with??\nYou can allow access to contacts from Android settings.";
+"warn_contacts_denied"="You denied access to contacts. You won\'t be able to see changes in contacts here.";
+"err_camera_scanner_denied"="We need access to your camera in order to scan the barcode from the other device.";
+"err_camera_picture_denied"="We need access to your camera to take pictures.";
+
+"err_audio_or_storage_denied"="We need access to the microphone for recording your voice and access to external storage to save your recordings.";
+
+"err_storage_denied"="Kontalk needs access to local storage to store media.\nYou can allow access to storage from Android settings.";
+
+"err_location_denied"="We need access to your location if you want to share it.";
+
+"err_validation_phone_state_denied"="If you allow Kontalk to manage phone calls, it can automatically detect your phone number.\nKontalk won\'t use the granted permission for anything else.";
+
+"err_emoji_disabled_in_multiwindow"="Emoji can\'t be used in multi-window mode.";
+
+"permission_messages_label"="Access to Kontalk messages";
+"permission_messages_description"="Can read from and write to the Kontalk messages database";
+"permission_users_label"="Access to Kontalk users information";
+"permission_users_description"="Can read from and write to the Kontalk users database and keyring";
+
+"pref_enable_outgoing_sound"="Play sound for outgoing messages";
+
+"contact_name_server"="Your server";
+
+"notify_incoming_message_channel_name"="Messages";
+"notify_incoming_message_channel_description"="Incoming messages";
+
+"notify_media_download_channel_name"="Downloads";
+"notify_media_download_channel_description"="Media downloads";
+
+"notify_media_upload_channel_name"="Uploads";
+"notify_media_upload_channel_description"="Media uploads";
+
+"notify_message_center_channel_name"="Message Center";
+"notify_message_center_channel_description"="Required to keep Kontalk service alive";
+
+"notify_other_channel_name"="Other";
+"notify_other_channel_description"="Other notifications";

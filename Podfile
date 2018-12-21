@@ -10,6 +10,16 @@ target 'Kontalk' do
   pod 'SwiftyBeaver'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftEventBus', :tag => '3.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+  
+  # UI
+  pod "FlagPhoneNumber"
+  pod 'RAMAnimatedTabBarController'
+  pod 'NVActivityIndicatorView'
+  
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 
   target 'KontalkTests' do
     inherit! :search_paths

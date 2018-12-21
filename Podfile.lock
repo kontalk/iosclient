@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - CocoaAsyncSocket (7.6.3)
   - CocoaLumberjack (3.4.2):
     - CocoaLumberjack/Default (= 3.4.2)
@@ -11,8 +12,19 @@ PODS:
   - Crashlytics (3.11.0):
     - Fabric (~> 1.8.0)
   - Fabric (1.8.0)
+  - FlagPhoneNumber (0.7.1):
+    - libPhoneNumber-iOS
   - KissXML (5.2.3)
   - libidn (1.35)
+  - libPhoneNumber-iOS (0.9.13)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
+  - RAMAnimatedTabBarController (4.0.1)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.3.1)
+  - SwiftEventBus (3.0.1)
   - SwiftyBeaver (1.6.1)
   - XMPPFramework/default (4.0.0):
     - CocoaAsyncSocket (~> 7.6)
@@ -24,32 +36,64 @@ PODS:
     - XMPPFramework/default
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - Crashlytics
   - Fabric
+  - FlagPhoneNumber
+  - NVActivityIndicatorView
+  - RAMAnimatedTabBarController
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `3.0.1`)
   - SwiftyBeaver
   - XMPPFramework/Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - CocoaAsyncSocket
     - CocoaLumberjack
     - Crashlytics
     - Fabric
+    - FlagPhoneNumber
     - KissXML
     - libidn
+    - libPhoneNumber-iOS
+    - NVActivityIndicatorView
+    - RAMAnimatedTabBarController
+    - RxCocoa
+    - RxSwift
     - SwiftyBeaver
     - XMPPFramework
 
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 3.0.1
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 3.0.1
+
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 1448070c1d2731ab71ea7c3faf84ac0f69657287
   Fabric: 4ac1cdfef3004ccd83ce0959b91eda8a6e37df72
+  FlagPhoneNumber: d1ca8296b3d7f29b505dc55bfd1608d411c9d636
   KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
   libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
+  libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  RAMAnimatedTabBarController: 677d6f7ec7e88b1089486f4db49b0a5067e8ad1c
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  SwiftEventBus: 87ccaeceff91b748775e37751ae3a81ec815b3d5
   SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
   XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
 
-PODFILE CHECKSUM: 250f73ea90d5ff68b02ed4b5f0d26ef24c290b4a
+PODFILE CHECKSUM: da08114b962a5de88603e020c77b3f9e9146e871
 
 COCOAPODS: 1.5.2
