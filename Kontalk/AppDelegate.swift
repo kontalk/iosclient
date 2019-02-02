@@ -17,15 +17,15 @@ import CoreData
 import Fabric
 import Crashlytics
 import SwiftyBeaver
-import CocoaLumberjack
 import NVActivityIndicatorView
-
 let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let xmppStream = XMPPStream()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         Fabric.with([Crashlytics.self])
         DDLog.add(DDTTYLogger.sharedInstance, with: .all)
+        
         #endif
         
         //INIT SwiftyBeaver
@@ -46,6 +47,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // add the destinations to SwiftyBeaver
         log.addDestination(console)
+        
+        //TODO REMOVE
+        xmppStream.hostName = "prime.kontalk.net"
+        xmppStream.hostPort = 7222
+//        xmppStream.hostPort = 7223
+        
+        xmppStream.startTLSPolicy = XMPPStreamStartTLSPolicy.preferred
+        
+        /*let xmppRosterStorage = XMPPRosterCoreDataStorage()
+        let xmppRoster: XMPPRoster = XMPPRoster(rosterStorage: xmppRosterStorage)
+        
+        xmppRoster.activate(xmppStream)*/
+        xmppStream.addDelegate(self, delegateQueue: DispatchQueue.main)
+        //xmppRoster.addDelegate(self, delegateQueue: DispatchQueue.main)
+        
+        xmppStream.myJID = XMPPJID(string: "prime@prime.kontalk.net")
+        
+        /*do {
+            try xmppStream.connect(withTimeout: 10000)
+        } catch {
+            log.error("could not connect")
+        }*/
+        
         return true
     }
 
@@ -117,6 +141,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+}
 
+extension UIApplicationDelegate {
+    
+    static var shared: Self {
+        return UIApplication.shared.delegate! as! Self
+    }
 }
 

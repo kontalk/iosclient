@@ -12,21 +12,16 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import Foundation
-import CommonCrypto
+#ifndef SHA1_h
+#define SHA1_h
 
-extension String {
-    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
-        return NSLocalizedString(self, tableName: tableName, value: "**\(self)**", comment: "")
-    }
-    
-    func randomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0...length-1).map{ _ in letters.randomElement()! })
-    }
-    
-    func sha1() -> String {
-        return (SHA1Hash().sha1(self)?.lowercased())!
-    }
-}
 
+#endif /* SHA1_h */
+
+#import <Foundation/Foundation.h>
+
+@interface SHA1Hash : NSObject
+
+- (NSString*) sha1:(NSString*)input;
+
+@end

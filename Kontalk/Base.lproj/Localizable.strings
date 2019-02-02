@@ -13,7 +13,8 @@
 "authenticator_name"="Authentication Service";
 "sync_service_name"="Sync Contacts";
 "download_service"="Download Service";
-"ok"="OK";
+"ok"="Ok";
+"cancel"="Cancel";
 "yes"="Yes";
 "no"="No";
 "send"="Send";

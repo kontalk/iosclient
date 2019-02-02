@@ -37,7 +37,7 @@
  * </iq>
  *
  */
-- (BOOL)numberValidation:(NSString *)phoneNumber acceptTerms:(BOOL)terms
+- (BOOL)numberValidation:(NSString *)phoneNumber acceptTerms:(BOOL)terms forceRegistration:(BOOL)force
 {
     dispatch_block_t block = ^{
         @autoreleasepool {
@@ -85,7 +85,20 @@
              
             [x addChild:fieldGdpr];
             
-            XMPPIQ *iq = [XMPPIQ iqWithType:@"set" to:[XMPPJID jidWithString:@"prime.kontalk.net"] elementID:@"80zgA-18" child:query];
+            if (force) {
+                DDXMLElement *forceRegistration = [DDXMLElement elementWithName:@"field"];
+                [forceRegistration addAttributeWithName:@"label" stringValue:@"Force registration"];
+                [forceRegistration addAttributeWithName:@"var" stringValue:@"force"];
+                [forceRegistration addAttributeWithName:@"type" stringValue:@"boolean"];
+                
+                DDXMLElement *force = [DDXMLElement elementWithName:@"value"];
+                force.stringValue = @"true";
+                [forceRegistration addChild:force];
+                
+                [x addChild:forceRegistration];
+            }
+            
+            XMPPIQ *iq = [XMPPIQ iqWithType:@"set" to:[XMPPJID jidWithString:xmppStream.hostName] elementID:@"80zgA-18" child:query];
             
             [xmppIDTracker addElement:iq
                             target:self
@@ -105,25 +118,91 @@
 }
 
 /**
+ * This extension is used to register to the Kontalk service.
+ * It uses XEP-0077: In-band registration with a few more form fields to include some stuff such as verification code, phone number and public key
+ *
+ * @link {https://github.com/kontalk/specs/blob/master/register.md}
+ *
+ *
+ * <iq to='prime.kontalk.net' id='80zgA-25' type='set'>
+ * <query xmlns='jabber:iq:register'>
+ * <x xmlns='jabber:x:data' type='submit'>
+ * <field var='FORM_TYPE' type='hidden'>
+ * <value>http://kontalk.org/protocol/register#code</value>
+ * </field>
+ * <field label='Validation code' var='code' type='text-single'>
+ * <value>839775</value>
+ * </field>
+ * </x>
+ * </query>
+ * </iq>
+ *
+ */
+- (BOOL)codeValidation:(NSString *)validationCode
+{
+    dispatch_block_t block = ^{
+        @autoreleasepool {
+            
+            DDXMLElement *query = [DDXMLElement elementWithName:@"query" xmlns:@"jabber:iq:register"];
+            
+            DDXMLElement *x = [DDXMLElement elementWithName:@"x" xmlns:@"jabber:x:data"];
+            [x addAttributeWithName:@"type" stringValue:@"submit"];
+            
+            [query addChild:x];
+            
+            DDXMLElement *field = [DDXMLElement elementWithName:@"field"];
+            [field addAttributeWithName:@"var" stringValue:@"FORM_TYPE"];
+            [field addAttributeWithName:@"type" stringValue:@"hidden"];
+            
+            DDXMLElement *formType = [DDXMLElement elementWithName:@"value"];
+            formType.stringValue = @"http://kontalk.org/protocol/register#code";
+            
+            [field addChild:formType];
+            [x addChild:field];
+            
+            DDXMLElement *fieldValidationCode = [DDXMLElement elementWithName:@"field"];
+            [fieldValidationCode addAttributeWithName:@"label" stringValue:@"Validation code"];
+            [fieldValidationCode addAttributeWithName:@"var" stringValue:@"code"];
+            [fieldValidationCode addAttributeWithName:@"type" stringValue:@"text-single"];
+            
+            DDXMLElement *code = [DDXMLElement elementWithName:@"value"];
+            code.stringValue = validationCode;
+            [fieldValidationCode addChild:code];
+            
+            [x addChild:fieldValidationCode];
+            
+            XMPPIQ *iq = [XMPPIQ iqWithType:@"set" to:[XMPPJID jidWithString:xmppStream.hostName] elementID:@"80zgA-25" child:query];
+            
+            [xmppIDTracker addElement:iq
+                               target:self
+                             selector:@selector(handleCodeValidationIQ:withInfo:)
+                              timeout:60];
+            
+            [self.xmppStream sendElement:iq];
+        }
+    };
+    
+    if (dispatch_get_specific(moduleQueueTag))
+        block();
+    else
+        dispatch_async(moduleQueue, block);
+    
+    return YES;
+}
+
+/**
  * This method handles the response received (or not received) after calling numberValidation.
  */
 - (void)handleNumberValidationIQ:(XMPPIQ *)iq withInfo:(XMPPBasicTrackingInfo *)info
 {
     dispatch_block_t block = ^{
         @autoreleasepool {
-            NSXMLElement *errorElem = [iq elementForName:@"error"];
+            DDXMLElement *errorElem = [iq elementForName:@"error"];
             
             if (errorElem) {
-                NSString *errMsg = [[errorElem children] componentsJoinedByString:@", "];
-                NSInteger errCode = [errorElem attributeIntegerValueForName:@"code"
-                                                           withDefaultValue:-1];
-                NSDictionary *errInfo = @{NSLocalizedDescriptionKey : errMsg};
-                NSError *err = [NSError errorWithDomain:NSRegistrationDomain
-                                                   code:errCode
-                                               userInfo:errInfo];
                 
                 [multicastDelegate numberValidationFailed:self
-                                                  withError:err];
+                                                  withError:errorElem];
                 return;
             }
             
@@ -144,5 +223,46 @@
         dispatch_async(moduleQueue, block);
 }
 
+/**
+ * This method handles the response received (or not received) after calling codeValidation.
+ */
+- (void)handleCodeValidationIQ:(XMPPIQ *)iq withInfo:(XMPPBasicTrackingInfo *)info
+{
+    dispatch_block_t block = ^{
+        @autoreleasepool {
+            DDXMLElement *errorElem = [iq elementForName:@"error"];
+            
+            if (errorElem) {
+                
+                [multicastDelegate codeValidationFailed:self
+                                                withError:errorElem];
+                return;
+            }
+            
+            NSString *type = [iq type];
+            
+            if ([type isEqualToString:@"result"]) {
+                DDXMLElement *query = [iq elementForName:@"query"];
+                DDXMLElement *x = [query elementForName:@"x"];
+                NSArray<DDXMLElement *> *fields = [x elementsForName:@"field"];
+                for (DDXMLElement *field in fields) {
+                    NSString *var = [field attributeStringValueForName:@"var"];
+                    if ([var isEqualToString:@"publickey"]) {
+                        [multicastDelegate codeValidationSuccessful:self :[field stringValue]];
+                    }
+                }
+                [multicastDelegate codeValidationFailed:self withError:nil];
+            } else {
+                // this should be impossible to reach, but just for safety's sake...
+                [multicastDelegate codeValidationFailed:self withError:nil];
+            }
+        }
+    };
+    
+    if (dispatch_get_specific(moduleQueueTag))
+        block();
+    else
+        dispatch_async(moduleQueue, block);
+}
 
 @end

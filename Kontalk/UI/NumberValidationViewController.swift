@@ -19,8 +19,6 @@ import RxSwift
 import RxCocoa
 import libPhoneNumber_iOS
 
-import XMPPFramework
-
 class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, XMPPStreamDelegate, KontalkRegistrationDelegate {
     
     @IBOutlet weak var textViewFirstIntro: UITextView!
@@ -31,16 +29,35 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
     
     var isValidNumber: Bool = false
     
-    let xmppStream = XMPPStream()
-    
+    var xmppStream: XMPPStream?
+    let kontalkRegister = XMPPRegistration.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        xmppStream = AppDelegate.shared.xmppStream
+        
+        kontalkRegister.activate(xmppStream!)
+        
         initUI()
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        xmppStream?.addDelegate(self, delegateQueue: DispatchQueue.main)
+        
+        kontalkRegister.addDelegate(self, delegateQueue: DispatchQueue.main)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        xmppStream?.removeDelegate(self)
+        kontalkRegister.removeDelegate(self)
+    }
+    
     func initUI() {
+        title = "Kontalk"
+        self.navigationController?.navigationBar.tintColor = .white
+        
         textViewFirstIntro.text = "number_validation_intro1".localized()
         textViewSecondIntro.text = "number_validation_intro2".localized()
     
@@ -49,7 +66,7 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
         buttonRegister.setTitle("button_validate".localized(), for: .normal)
         
         numberTextField.parentViewController = self
-        numberTextField.flagPhoneNumberDelegate = self
+        numberTextField.delegate = self
         
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
             numberTextField.setFlag(for: FPNCountryCode.init(rawValue: countryCode) ?? .US)
@@ -73,50 +90,69 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
             })
             .subscribe { _ in
                 self.showLoader()
-                self.xmppRegister()
+                self.xmppConnect()
             }
     }
     
-    func xmppRegister() {
-        DDLog.add(DDTTYLogger.sharedInstance, with: DDLogLevel.all)
-        xmppStream.hostName = "prime.kontalk.net"
-        xmppStream.hostPort = 7222
-        //xmppStream.startTLSPolicy = XMPPStreamStartTLSPolicy.allowed
-        
-        let xmppRosterStorage = XMPPRosterCoreDataStorage()
-        let xmppRoster: XMPPRoster = XMPPRoster(rosterStorage: xmppRosterStorage)
-        
-        xmppRoster.activate(xmppStream)
-        xmppStream.addDelegate(self, delegateQueue: DispatchQueue.main)
-        xmppRoster.addDelegate(self, delegateQueue: DispatchQueue.main)
-        
-        xmppStream.myJID = XMPPJID(string: "prime@prime.kontalk.net")
-        
-        do {
-            try xmppStream.connect(withTimeout: 10000)
-        } catch {
-            log.error("could not connect")
+    func xmppConnect() {
+        if (!xmppStream!.isConnected) {
+            DispatchQueue.main.async {
+                do {
+                    try AppDelegate.shared.xmppStream.connect(withTimeout: 10000)
+                } catch {
+                    log.error("could not connect")
+                }
+            }
         }
-        
     }
     
     func xmppStream(_ sender: XMPPStream, didReceive message: XMPPMessage) {
     }
     
     func xmppStreamDidConnect(_ sender: XMPPStream) {
-        let x = XMPPRegistration.init()
-        x.addDelegate(self, delegateQueue: DispatchQueue.main)
-        x.activate(xmppStream)
-        x.numberValidation(numberTextField.getFormattedPhoneNumber(format: .E164) ?? "", acceptTerms: true)
+        log.info("Connected")
+        kontalkRegister.numberValidation(numberTextField.getFormattedPhoneNumber(format: .E164) ?? "", acceptTerms: true, forceRegistration: false)
     }
     
     func numberValidationSuccessful(_ sender: XMPPRegistration) {
         hideLoader()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let codeValidationViewController = storyBoard.instantiateViewController(withIdentifier: "codeValidationViewController") as! CodeValidationViewController
+        codeValidationViewController.phoneNumber = numberTextField.getFormattedPhoneNumber(format: .E164)
+        self.navigationController?.pushViewController(codeValidationViewController, animated: true)
     }
     
-    func numberValidationFailed(_ sender: XMPPRegistration, withError error: Error?) {
+    func numberValidationFailed(_ sender: XMPPRegistration, withError error: DDXMLElement?) {
         hideLoader()
-        log.error(error)
+        log.error(error?.xmlString ?? "")
+        if (error != nil) {
+            let errorCode = error?.attributeIntValue(forName: "code")
+            if (errorCode == 409) {
+                forceRegistration()
+            } else {
+                let errorText = error?.element(forName: "text", xmlnsPrefix: "")
+                showMessageAlert(withTitle: "", andMessage: errorText?.stringValue! ?? "")
+            }
+        }
+    }
+    
+    func forceRegistration() {
+        let alertController = UIAlertController(title: "", message: "err_validation_user_exists".localized(), preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "ok".localized(), style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            self.showLoader()
+            self.kontalkRegister.numberValidation(self.numberTextField.getFormattedPhoneNumber(format: .E164) ?? "",
+                                                  acceptTerms: true, forceRegistration: true)
+        }
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
@@ -126,4 +162,7 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
         isValidNumber = isValid
     }
     
+    func xmppStreamDidDisconnect(_ sender: XMPPStream, withError error: Error?) {
+        log.error(error.debugDescription)
+    }
 }

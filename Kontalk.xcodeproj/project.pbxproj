@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		6521614A21B714CC00B61EC6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521614921B714CC00B61EC6 /* Colors.swift */; };
 		65291C5D21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 65291C5C21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m */; };
+		654AB50321E9297800CF42F9 /* X509Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 654AB50121E9297800CF42F9 /* X509Bridge.m */; };
 		655F9CA621B976160011FFFA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F9CA521B976160011FFFA /* StringExtension.swift */; };
+		6564C48921D7901B00740B99 /* PersonalKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C48821D7901B00740B99 /* PersonalKey.swift */; };
+		6571F20A21CD87E00065F919 /* CodeValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571F20921CD87E00065F919 /* CodeValidationViewController.swift */; };
+		6579EB57220616CD00911085 /* SHA1Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579EB56220616CD00911085 /* SHA1Hash.m */; };
 		65942F2A21B4257D004506B7 /* NumberValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65942F2921B4257D004506B7 /* NumberValidationViewController.swift */; };
 		65ABBE1A21B33C5700E72C09 /* Serverlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65ABBE1921B33C5700E72C09 /* Serverlist.plist */; };
 		65BB5C2021B9522100850799 /* KontalkUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB5C1F21B9522100850799 /* KontalkUIButton.swift */; };
@@ -57,7 +61,14 @@
 		65291C5A21C2FC2900262932 /* Kontalk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kontalk-Bridging-Header.h"; sourceTree = "<group>"; };
 		65291C5B21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMPPRegistration+KontalkRegistration.h"; sourceTree = "<group>"; };
 		65291C5C21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XMPPRegistration+KontalkRegistration.m"; sourceTree = "<group>"; };
+		654AB50121E9297800CF42F9 /* X509Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = X509Bridge.m; sourceTree = "<group>"; };
+		654AB50221E9297800CF42F9 /* X509Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X509Bridge.h; sourceTree = "<group>"; };
+		654AB50421E929AF00CF42F9 /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		655F9CA521B976160011FFFA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		6564C48821D7901B00740B99 /* PersonalKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalKey.swift; sourceTree = "<group>"; };
+		6571F20921CD87E00065F919 /* CodeValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidationViewController.swift; sourceTree = "<group>"; };
+		6579EB56220616CD00911085 /* SHA1Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHA1Hash.m; sourceTree = "<group>"; };
+		6579EB582206175800911085 /* SHA1Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHA1Hash.h; sourceTree = "<group>"; };
 		65942F2921B4257D004506B7 /* NumberValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberValidationViewController.swift; sourceTree = "<group>"; };
 		65ABBE1921B33C5700E72C09 /* Serverlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Serverlist.plist; sourceTree = "<group>"; };
 		65BB5C1F21B9522100850799 /* KontalkUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontalkUIButton.swift; sourceTree = "<group>"; };
@@ -149,6 +160,26 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		6564C48721D7900600740B99 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				654AB50421E929AF00CF42F9 /* Types.h */,
+				654AB50221E9297800CF42F9 /* X509Bridge.h */,
+				654AB50121E9297800CF42F9 /* X509Bridge.m */,
+				6564C48821D7901B00740B99 /* PersonalKey.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		6579EB51220610F600911085 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6579EB56220616CD00911085 /* SHA1Hash.m */,
+				6579EB582206175800911085 /* SHA1Hash.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		65ABBE1B21B33E8200E72C09 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +191,7 @@
 				65C0168E21B689A500EE317A /* BaseViewController.swift */,
 				6521614921B714CC00B61EC6 /* Colors.swift */,
 				655F9CA521B976160011FFFA /* StringExtension.swift */,
+				6571F20921CD87E00065F919 /* CodeValidationViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -189,6 +221,8 @@
 		65C1C24B21B2F29C0068F728 /* Kontalk */ = {
 			isa = PBXGroup;
 			children = (
+				6579EB51220610F600911085 /* Utils */,
+				6564C48721D7900600740B99 /* Crypto */,
 				65F22E3E21C2378800129CE2 /* XMPP */,
 				65ABBE1B21B33E8200E72C09 /* UI */,
 				65C1C24C21B2F29C0068F728 /* AppDelegate.swift */,
@@ -253,6 +287,7 @@
 				65C1C24721B2F29C0068F728 /* Resources */,
 				01FE9ACB819C25E6BDC8C336 /* [CP] Embed Pods Frameworks */,
 				65C1C28B21B3281D0068F728 /* Run Script */,
+				6564C4D821D7DE9E00740B99 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -387,11 +422,16 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
+				"${BUILT_PRODUCTS_DIR}/IDZSwiftCommonCrypto/IDZSwiftCommonCrypto.framework",
 				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework",
+				"${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SecurityExtensions/SecurityExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/XMPPFramework/XMPPFramework.framework",
@@ -404,11 +444,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDZSwiftCommonCrypto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectivePGP.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/ObjectivePGP.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SecurityExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEventBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMPPFramework.framework",
@@ -437,6 +482,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6564C4D821D7DE9E00740B99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectivePGP.framework/strip-frameworks.sh\"\n";
 		};
 		65C1C28B21B3281D0068F728 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -496,8 +554,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6579EB57220616CD00911085 /* SHA1Hash.m in Sources */,
 				65C0168F21B689A500EE317A /* BaseViewController.swift in Sources */,
 				65C1C24F21B2F29C0068F728 /* ViewController.swift in Sources */,
+				6571F20A21CD87E00065F919 /* CodeValidationViewController.swift in Sources */,
 				655F9CA621B976160011FFFA /* StringExtension.swift in Sources */,
 				65C0169321B6B0A300EE317A /* KontalkNavigationBar.swift in Sources */,
 				6521614A21B714CC00B61EC6 /* Colors.swift in Sources */,
@@ -505,8 +565,10 @@
 				65BB5C2021B9522100850799 /* KontalkUIButton.swift in Sources */,
 				65D9793021B95F7500044910 /* UIViewExtension.swift in Sources */,
 				65942F2A21B4257D004506B7 /* NumberValidationViewController.swift in Sources */,
+				6564C48921D7901B00740B99 /* PersonalKey.swift in Sources */,
 				65C1C24D21B2F29C0068F728 /* AppDelegate.swift in Sources */,
 				65291C5D21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m in Sources */,
+				654AB50321E9297800CF42F9 /* X509Bridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,16 +757,74 @@
 			baseConfigurationReference = 3D0A4FC884B6994C5641620C /* Pods-Kontalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Kontalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kontalk",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FlagPhoneNumber\"",
+					"-framework",
+					"\"IDZSwiftCommonCrypto\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"ObjectivePGP\"",
+					"-framework",
+					"\"RAMAnimatedTabBarController\"",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityExtensions\"",
+					"-framework",
+					"\"SwiftEventBus\"",
+					"-framework",
+					"\"SwiftyBeaver\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"libPhoneNumber_iOS\"",
+					"-weak_framework",
+					"\"Security\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.kontalk.Kontalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kontalk/XMPP/Kontalk-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -717,16 +837,74 @@
 			baseConfigurationReference = 19289DB15EDE47133E6370C7 /* Pods-Kontalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Kontalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kontalk",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FlagPhoneNumber\"",
+					"-framework",
+					"\"IDZSwiftCommonCrypto\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"ObjectivePGP\"",
+					"-framework",
+					"\"RAMAnimatedTabBarController\"",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityExtensions\"",
+					"-framework",
+					"\"SwiftEventBus\"",
+					"-framework",
+					"\"SwiftyBeaver\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"libPhoneNumber_iOS\"",
+					"-weak_framework",
+					"\"Security\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.kontalk.Kontalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kontalk/XMPP/Kontalk-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

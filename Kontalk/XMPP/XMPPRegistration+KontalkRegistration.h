@@ -17,7 +17,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XMPPRegistration (KontalkRegistration)
-- (BOOL)numberValidation:(NSString *)phoneNumber acceptTerms:(BOOL)terms;
+- (BOOL)numberValidation:(NSString *)phoneNumber acceptTerms:(BOOL)terms forceRegistration:(BOOL)force;
+- (BOOL)codeValidation:(NSString *)validationCode;
 @end
 
 @protocol KontalkRegistrationDelegate
@@ -30,8 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
  * @param sender XMPPRegistration object invoking this delegate method.
  */
 - (void)numberValidationSuccessful:(XMPPRegistration *)sender;
-- (void)numberValidationFailed:(XMPPRegistration *)sender withError:(nullable NSError *)error;
-
+- (void)numberValidationFailed:(XMPPRegistration *)sender withError:(nullable DDXMLElement *)error;
+- (void)codeValidationSuccessful:(XMPPRegistration *)sender :(NSString *)publicKey;
+- (void)codeValidationFailed:(XMPPRegistration *)sender withError:(nullable DDXMLElement *)error;
 @end
 
 NS_ASSUME_NONNULL_END

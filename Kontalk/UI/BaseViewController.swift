@@ -17,30 +17,11 @@ import UIKit
 class BaseViewController: UIViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
-        UIApplication.shared.statusBarView?.backgroundColor = .primaryColor
         
-        let navigationBar = KontalkNavigationBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 44))
-        navigationBar.barTintColor = .primaryColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        
-        self.view.addSubview(navigationBar)
-        
-        let navItem = UINavigationItem()
-        navItem.title = "Kontalk"
-        
-        navigationBar.items = [navItem]
-        
-        
-        navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        navigationBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
-        if #available(iOS 11, *) {
-            navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        } else {
-            navigationBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        }
     }
 }
 
