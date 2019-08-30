@@ -29,7 +29,10 @@ class CodeValidationViewController: BaseViewController, XMPPStreamDelegate, Kont
     var personalKey: PersonalKey!
     
     var phoneNumber: String!
+    var challengeType: String!
     
+    var brandLink: String?
+    var brandImage:String?
     
     var xmppStream: XMPPStream?
     let kontalkRegister = XMPPRegistration.init()
@@ -47,6 +50,12 @@ class CodeValidationViewController: BaseViewController, XMPPStreamDelegate, Kont
     }
     
     func initUI() {
+        if (brandLink == nil && brandImage == nil) {
+            labelPoweredBy.updateConstraint(attribute: NSLayoutConstraint.Attribute.height, constant: 0)
+            imgPoweredBy.updateConstraint(attribute: NSLayoutConstraint.Attribute.height, constant: 0)
+        } else {
+            
+        }
         labelPoweredBy.text = "registration_poweredby".localized()
         textViewIntro.text = "code_validation_intro".localized()
         textFieldCode.placeholder = "hint_validation_code".localized()

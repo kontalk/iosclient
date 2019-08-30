@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.8.1)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
+  - AvatarImageView (2.2.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLumberjack (3.5.0):
     - CocoaLumberjack/Core (= 3.5.0)
@@ -41,6 +44,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.5)
+  - AvatarImageView (~> 2.2.0)
   - Crashlytics
   - Fabric
   - FlagPhoneNumber
@@ -58,6 +63,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
+    - AvatarImageView
     - CocoaLumberjack
     - Crashlytics
     - Fabric
@@ -99,6 +106,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  AvatarImageView: afe8e7eb50181ca3f095e21034f245676b535c55
   CocoaAsyncSocket: 08cf61a5d5fbff3d8e1d2b0dba569478a4efae27
   CocoaLumberjack: cffaa70a9336515228178e3669b71bd49d343850
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
@@ -120,6 +129,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
   XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
 
-PODFILE CHECKSUM: 794ec3e8d4350d1383b50bde9a5e0dc793dd708d
+PODFILE CHECKSUM: 51674d34b54a0850eec8827e64d95ad3c9faea95
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

@@ -84,6 +84,17 @@ class PersonalKey {
         
         let identity = firstItem[kSecImportItemIdentity as String] as! SecIdentity?
         
+        
+        
+        let addquerry: [String: Any] = [
+            kSecValueRef as String: identity,
+        ]
+        let addStatus:OSStatus = SecItemAdd(addquerry as CFDictionary, nil)
+        
+        if status != errSecSuccess {
+            log.error("error")
+        }
+        
         return identity!
     }
 

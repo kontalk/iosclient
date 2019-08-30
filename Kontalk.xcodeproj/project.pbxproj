@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B81498A48FB5A27DA92F05F /* Pods_Kontalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D60AC816AB2BF6343A4B8A /* Pods_Kontalk.framework */; };
 		6521614A21B714CC00B61EC6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521614921B714CC00B61EC6 /* Colors.swift */; };
 		65291C5D21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 65291C5C21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m */; };
+		6549B9CC2215478B00461B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E8EB69220F73BD008184DC /* Main.storyboard */; };
 		654AB50321E9297800CF42F9 /* X509Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 654AB50121E9297800CF42F9 /* X509Bridge.m */; };
 		655F9CA621B976160011FFFA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F9CA521B976160011FFFA /* StringExtension.swift */; };
 		6564C48921D7901B00740B99 /* PersonalKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C48821D7901B00740B99 /* PersonalKey.swift */; };
@@ -16,13 +18,34 @@
 		6579EB57220616CD00911085 /* SHA1Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579EB56220616CD00911085 /* SHA1Hash.m */; };
 		65942F2A21B4257D004506B7 /* NumberValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65942F2921B4257D004506B7 /* NumberValidationViewController.swift */; };
 		65ABBE1A21B33C5700E72C09 /* Serverlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65ABBE1921B33C5700E72C09 /* Serverlist.plist */; };
+		65ABE555220F17C0003E3B35 /* SHA1Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6579EB56220616CD00911085 /* SHA1Hash.m */; };
+		65ABE556220F17C0003E3B35 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0168E21B689A500EE317A /* BaseViewController.swift */; };
+		65ABE557220F17C0003E3B35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C24E21B2F29C0068F728 /* ViewController.swift */; };
+		65ABE558220F17C0003E3B35 /* CodeValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571F20921CD87E00065F919 /* CodeValidationViewController.swift */; };
+		65ABE559220F17C0003E3B35 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F9CA521B976160011FFFA /* StringExtension.swift */; };
+		65ABE55A220F17C0003E3B35 /* KontalkNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0169221B6B0A300EE317A /* KontalkNavigationBar.swift */; };
+		65ABE55B220F17C0003E3B35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521614921B714CC00B61EC6 /* Colors.swift */; };
+		65ABE55C220F17C0003E3B35 /* Kontalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C25321B2F29C0068F728 /* Kontalk.xcdatamodeld */; };
+		65ABE55D220F17C0003E3B35 /* KontalkUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB5C1F21B9522100850799 /* KontalkUIButton.swift */; };
+		65ABE55E220F17C0003E3B35 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D9792F21B95F7500044910 /* UIViewExtension.swift */; };
+		65ABE55F220F17C0003E3B35 /* NumberValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65942F2921B4257D004506B7 /* NumberValidationViewController.swift */; };
+		65ABE560220F17C0003E3B35 /* PersonalKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C48821D7901B00740B99 /* PersonalKey.swift */; };
+		65ABE561220F17C0003E3B35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C24C21B2F29C0068F728 /* AppDelegate.swift */; };
+		65ABE562220F17C0003E3B35 /* XMPPRegistration+KontalkRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 65291C5C21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m */; };
+		65ABE563220F17C0003E3B35 /* X509Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 654AB50121E9297800CF42F9 /* X509Bridge.m */; };
+		65ABE567220F17C0003E3B35 /* Serverlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65ABBE1921B33C5700E72C09 /* Serverlist.plist */; };
+		65ABE568220F17C0003E3B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25821B2F29D0068F728 /* LaunchScreen.storyboard */; };
+		65ABE569220F17C0003E3B35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C28621B2FBA40068F728 /* Localizable.strings */; };
+		65ABE56A220F17C0003E3B35 /* KontalkNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C0169021B68C8600EE317A /* KontalkNavigationBar.xib */; };
+		65ABE56B220F17C0003E3B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25621B2F29D0068F728 /* Assets.xcassets */; };
+		65ABE56C220F17C0003E3B35 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25021B2F29C0068F728 /* Registration.storyboard */; };
 		65BB5C2021B9522100850799 /* KontalkUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB5C1F21B9522100850799 /* KontalkUIButton.swift */; };
 		65C0168F21B689A500EE317A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0168E21B689A500EE317A /* BaseViewController.swift */; };
 		65C0169121B68C8600EE317A /* KontalkNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C0169021B68C8600EE317A /* KontalkNavigationBar.xib */; };
 		65C0169321B6B0A300EE317A /* KontalkNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0169221B6B0A300EE317A /* KontalkNavigationBar.swift */; };
 		65C1C24D21B2F29C0068F728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C24C21B2F29C0068F728 /* AppDelegate.swift */; };
 		65C1C24F21B2F29C0068F728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C24E21B2F29C0068F728 /* ViewController.swift */; };
-		65C1C25221B2F29C0068F728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25021B2F29C0068F728 /* Main.storyboard */; };
+		65C1C25221B2F29C0068F728 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25021B2F29C0068F728 /* Registration.storyboard */; };
 		65C1C25521B2F29C0068F728 /* Kontalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C25321B2F29C0068F728 /* Kontalk.xcdatamodeld */; };
 		65C1C25721B2F29D0068F728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25621B2F29D0068F728 /* Assets.xcassets */; };
 		65C1C25A21B2F29D0068F728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C25821B2F29D0068F728 /* LaunchScreen.storyboard */; };
@@ -30,6 +53,8 @@
 		65C1C27021B2F29D0068F728 /* KontalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C26F21B2F29D0068F728 /* KontalkUITests.swift */; };
 		65C1C28821B2FBA40068F728 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C1C28621B2FBA40068F728 /* Localizable.strings */; };
 		65D9793021B95F7500044910 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D9792F21B95F7500044910 /* UIViewExtension.swift */; };
+		65E8EB6A220F73BD008184DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E8EB69220F73BD008184DC /* Main.storyboard */; };
+		65E8EB6D221085CE008184DC /* XMPPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E8EB6C221085CE008184DC /* XMPPController.swift */; };
 		AD2201023822C88E9B731EF2 /* Pods_KontalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF89E28E0D451F5C8A29E96 /* Pods_KontalkUITests.framework */; };
 		E059E27EBB9BE14BE075BF2C /* Pods_Kontalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D60AC816AB2BF6343A4B8A /* Pods_Kontalk.framework */; };
 		EE718C67734D86E333018C20 /* Pods_KontalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC53C8141215E440D9AC3580 /* Pods_KontalkTests.framework */; };
@@ -53,10 +78,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19289DB15EDE47133E6370C7 /* Pods-Kontalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kontalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kontalk/Pods-Kontalk.release.xcconfig"; sourceTree = "<group>"; };
+		13155F5A815AAF8DC20AAC43 /* Pods-Kontalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kontalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kontalk/Pods-Kontalk.release.xcconfig"; sourceTree = "<group>"; };
 		358DBD2AEFABB77752F9E64B /* Pods-KontalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KontalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KontalkTests/Pods-KontalkTests.release.xcconfig"; sourceTree = "<group>"; };
-		3D0A4FC884B6994C5641620C /* Pods-Kontalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kontalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kontalk/Pods-Kontalk.debug.xcconfig"; sourceTree = "<group>"; };
 		59745244C09436B716A63B8E /* Pods-KontalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KontalkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KontalkUITests/Pods-KontalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		623C4BB277CB7555D01EF945 /* Pods-Kontalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kontalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kontalk/Pods-Kontalk.debug.xcconfig"; sourceTree = "<group>"; };
 		6521614921B714CC00B61EC6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		65291C5A21C2FC2900262932 /* Kontalk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kontalk-Bridging-Header.h"; sourceTree = "<group>"; };
 		65291C5B21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMPPRegistration+KontalkRegistration.h"; sourceTree = "<group>"; };
@@ -71,6 +96,8 @@
 		6579EB582206175800911085 /* SHA1Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHA1Hash.h; sourceTree = "<group>"; };
 		65942F2921B4257D004506B7 /* NumberValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberValidationViewController.swift; sourceTree = "<group>"; };
 		65ABBE1921B33C5700E72C09 /* Serverlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Serverlist.plist; sourceTree = "<group>"; };
+		65ABE573220F17C0003E3B35 /* Kontalk Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kontalk Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ABE574220F17C0003E3B35 /* Kontalk copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Kontalk copy-Info.plist"; path = "/Users/andrea/workspace/Kontalk/Kontalk copy-Info.plist"; sourceTree = "<absolute>"; };
 		65BB5C1F21B9522100850799 /* KontalkUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontalkUIButton.swift; sourceTree = "<group>"; };
 		65C0168E21B689A500EE317A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		65C0169021B68C8600EE317A /* KontalkNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KontalkNavigationBar.xib; sourceTree = "<group>"; };
@@ -78,7 +105,7 @@
 		65C1C24921B2F29C0068F728 /* Kontalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kontalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C1C24C21B2F29C0068F728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C1C24E21B2F29C0068F728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		65C1C25121B2F29C0068F728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65C1C25121B2F29C0068F728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
 		65C1C25421B2F29C0068F728 /* Kontalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kontalk.xcdatamodel; sourceTree = "<group>"; };
 		65C1C25621B2F29D0068F728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65C1C25921B2F29D0068F728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,11 +116,13 @@
 		65C1C26B21B2F29D0068F728 /* KontalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KontalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C1C26F21B2F29D0068F728 /* KontalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontalkUITests.swift; sourceTree = "<group>"; };
 		65C1C27121B2F29D0068F728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65C1C27F21B2FADC0068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		65C1C27F21B2FADC0068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Registration.strings; sourceTree = "<group>"; };
 		65C1C28021B2FADC0068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		65C1C28721B2FBA40068F728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65C1C28A21B2FBA80068F728 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65D9792F21B95F7500044910 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		65E8EB69220F73BD008184DC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		65E8EB6C221085CE008184DC /* XMPPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMPPController.swift; sourceTree = "<group>"; };
 		B90D0F80E77392E624A69E9B /* Pods-KontalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KontalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KontalkTests/Pods-KontalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBF89E28E0D451F5C8A29E96 /* Pods_KontalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KontalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D430E37D3FE621FE80FE58D2 /* Pods-KontalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KontalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KontalkUITests/Pods-KontalkUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,11 +131,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		65ABE564220F17C0003E3B35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65C1C24621B2F29C0068F728 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E059E27EBB9BE14BE075BF2C /* Pods_Kontalk.framework in Frameworks */,
+				0B81498A48FB5A27DA92F05F /* Pods_Kontalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +169,12 @@
 		1C4F8446AB73C3F0542E7526 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D0A4FC884B6994C5641620C /* Pods-Kontalk.debug.xcconfig */,
-				19289DB15EDE47133E6370C7 /* Pods-Kontalk.release.xcconfig */,
 				B90D0F80E77392E624A69E9B /* Pods-KontalkTests.debug.xcconfig */,
 				358DBD2AEFABB77752F9E64B /* Pods-KontalkTests.release.xcconfig */,
 				59745244C09436B716A63B8E /* Pods-KontalkUITests.debug.xcconfig */,
 				D430E37D3FE621FE80FE58D2 /* Pods-KontalkUITests.release.xcconfig */,
+				623C4BB277CB7555D01EF945 /* Pods-Kontalk.debug.xcconfig */,
+				13155F5A815AAF8DC20AAC43 /* Pods-Kontalk.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -185,13 +222,14 @@
 			children = (
 				651E8C5521BC086C0063F38B /* extension */,
 				6521614B21B7188400B61EC6 /* view */,
-				65C1C25021B2F29C0068F728 /* Main.storyboard */,
+				65C1C25021B2F29C0068F728 /* Registration.storyboard */,
 				65C1C24E21B2F29C0068F728 /* ViewController.swift */,
 				65942F2921B4257D004506B7 /* NumberValidationViewController.swift */,
 				65C0168E21B689A500EE317A /* BaseViewController.swift */,
 				6521614921B714CC00B61EC6 /* Colors.swift */,
 				655F9CA521B976160011FFFA /* StringExtension.swift */,
 				6571F20921CD87E00065F919 /* CodeValidationViewController.swift */,
+				65E8EB69220F73BD008184DC /* Main.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -205,6 +243,7 @@
 				65C1C24A21B2F29C0068F728 /* Products */,
 				1C4F8446AB73C3F0542E7526 /* Pods */,
 				6672C5B198FC986BFFF73441 /* Frameworks */,
+				65ABE574220F17C0003E3B35 /* Kontalk copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +253,7 @@
 				65C1C24921B2F29C0068F728 /* Kontalk.app */,
 				65C1C26021B2F29D0068F728 /* KontalkTests.xctest */,
 				65C1C26B21B2F29D0068F728 /* KontalkUITests.xctest */,
+				65ABE573220F17C0003E3B35 /* Kontalk Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,12 +294,21 @@
 			path = KontalkUITests;
 			sourceTree = "<group>";
 		};
-		65F22E3E21C2378800129CE2 /* XMPP */ = {
+		65E8EB6B2210857A008184DC /* Registration */ = {
 			isa = PBXGroup;
 			children = (
 				65291C5B21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.h */,
 				65291C5C21C2FC2900262932 /* XMPPRegistration+KontalkRegistration.m */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		65F22E3E21C2378800129CE2 /* XMPP */ = {
+			isa = PBXGroup;
+			children = (
 				65291C5A21C2FC2900262932 /* Kontalk-Bridging-Header.h */,
+				65E8EB6B2210857A008184DC /* Registration */,
+				65E8EB6C221085CE008184DC /* XMPPController.swift */,
 			);
 			path = XMPP;
 			sourceTree = "<group>";
@@ -277,6 +326,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		65ABE552220F17C0003E3B35 /* Kontalk Debug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65ABE570220F17C0003E3B35 /* Build configuration list for PBXNativeTarget "Kontalk Debug" */;
+			buildPhases = (
+				65ABE554220F17C0003E3B35 /* Sources */,
+				65ABE564220F17C0003E3B35 /* Frameworks */,
+				65ABE566220F17C0003E3B35 /* Resources */,
+				65ABE56E220F17C0003E3B35 /* Run Script */,
+				65ABE56F220F17C0003E3B35 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kontalk Debug";
+			productName = Kontalk;
+			productReference = 65ABE573220F17C0003E3B35 /* Kontalk Debug.app */;
+			productType = "com.apple.product-type.application";
+		};
 		65C1C24821B2F29C0068F728 /* Kontalk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65C1C27421B2F29D0068F728 /* Build configuration list for PBXNativeTarget "Kontalk" */;
@@ -374,6 +442,7 @@
 			projectRoot = "";
 			targets = (
 				65C1C24821B2F29C0068F728 /* Kontalk */,
+				65ABE552220F17C0003E3B35 /* Kontalk Debug */,
 				65C1C25F21B2F29D0068F728 /* KontalkTests */,
 				65C1C26A21B2F29D0068F728 /* KontalkUITests */,
 			);
@@ -381,16 +450,31 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		65ABE566220F17C0003E3B35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6549B9CC2215478B00461B85 /* Main.storyboard in Resources */,
+				65ABE567220F17C0003E3B35 /* Serverlist.plist in Resources */,
+				65ABE568220F17C0003E3B35 /* LaunchScreen.storyboard in Resources */,
+				65ABE569220F17C0003E3B35 /* Localizable.strings in Resources */,
+				65ABE56A220F17C0003E3B35 /* KontalkNavigationBar.xib in Resources */,
+				65ABE56B220F17C0003E3B35 /* Assets.xcassets in Resources */,
+				65ABE56C220F17C0003E3B35 /* Registration.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65C1C24721B2F29C0068F728 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E8EB6A220F73BD008184DC /* Main.storyboard in Resources */,
 				65ABBE1A21B33C5700E72C09 /* Serverlist.plist in Resources */,
 				65C1C25A21B2F29D0068F728 /* LaunchScreen.storyboard in Resources */,
 				65C1C28821B2FBA40068F728 /* Localizable.strings in Resources */,
 				65C0169121B68C8600EE317A /* KontalkNavigationBar.xib in Resources */,
 				65C1C25721B2F29D0068F728 /* Assets.xcassets in Resources */,
-				65C1C25221B2F29C0068F728 /* Main.storyboard in Resources */,
+				65C1C25221B2F29C0068F728 /* Registration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +503,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kontalk/Pods-Kontalk-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AvatarImageView/AvatarImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
@@ -441,6 +527,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvatarImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
@@ -484,6 +572,34 @@
 			showEnvVarsInLog = 0;
 		};
 		6564C4D821D7DE9E00740B99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectivePGP.framework/strip-frameworks.sh\"\n";
+		};
+		65ABE56E220F17C0003E3B35 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 36ec6f9595f46111eed2e417d098e598d045b90c 91f4b25c2c16b0bab1d129f8c1a2d952cbd13b532437ce0b7a76c13b9d961890\n";
+		};
+		65ABE56F220F17C0003E3B35 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -550,6 +666,28 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		65ABE554220F17C0003E3B35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65ABE555220F17C0003E3B35 /* SHA1Hash.m in Sources */,
+				65ABE556220F17C0003E3B35 /* BaseViewController.swift in Sources */,
+				65ABE557220F17C0003E3B35 /* ViewController.swift in Sources */,
+				65ABE558220F17C0003E3B35 /* CodeValidationViewController.swift in Sources */,
+				65ABE559220F17C0003E3B35 /* StringExtension.swift in Sources */,
+				65ABE55A220F17C0003E3B35 /* KontalkNavigationBar.swift in Sources */,
+				65ABE55B220F17C0003E3B35 /* Colors.swift in Sources */,
+				65ABE55C220F17C0003E3B35 /* Kontalk.xcdatamodeld in Sources */,
+				65ABE55D220F17C0003E3B35 /* KontalkUIButton.swift in Sources */,
+				65ABE55E220F17C0003E3B35 /* UIViewExtension.swift in Sources */,
+				65ABE55F220F17C0003E3B35 /* NumberValidationViewController.swift in Sources */,
+				65ABE560220F17C0003E3B35 /* PersonalKey.swift in Sources */,
+				65ABE561220F17C0003E3B35 /* AppDelegate.swift in Sources */,
+				65ABE562220F17C0003E3B35 /* XMPPRegistration+KontalkRegistration.m in Sources */,
+				65ABE563220F17C0003E3B35 /* X509Bridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65C1C24521B2F29C0068F728 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -562,6 +700,7 @@
 				65C0169321B6B0A300EE317A /* KontalkNavigationBar.swift in Sources */,
 				6521614A21B714CC00B61EC6 /* Colors.swift in Sources */,
 				65C1C25521B2F29C0068F728 /* Kontalk.xcdatamodeld in Sources */,
+				65E8EB6D221085CE008184DC /* XMPPController.swift in Sources */,
 				65BB5C2021B9522100850799 /* KontalkUIButton.swift in Sources */,
 				65D9793021B95F7500044910 /* UIViewExtension.swift in Sources */,
 				65942F2A21B4257D004506B7 /* NumberValidationViewController.swift in Sources */,
@@ -604,13 +743,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		65C1C25021B2F29C0068F728 /* Main.storyboard */ = {
+		65C1C25021B2F29C0068F728 /* Registration.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65C1C25121B2F29C0068F728 /* Base */,
 				65C1C27F21B2FADC0068F728 /* it */,
 			);
-			name = Main.storyboard;
+			name = Registration.storyboard;
 			sourceTree = "<group>";
 		};
 		65C1C25821B2F29D0068F728 /* LaunchScreen.storyboard */ = {
@@ -634,6 +773,165 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		65ABE571220F17C0003E3B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Kontalk copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kontalk",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FlagPhoneNumber\"",
+					"-framework",
+					"\"IDZSwiftCommonCrypto\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"ObjectivePGP\"",
+					"-framework",
+					"\"RAMAnimatedTabBarController\"",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityExtensions\"",
+					"-framework",
+					"\"SwiftEventBus\"",
+					"-framework",
+					"\"SwiftyBeaver\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"libPhoneNumber_iOS\"",
+					"-weak_framework",
+					"\"Security\"",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kontalk.KontalkDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kontalk/XMPP/Kontalk-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65ABE572220F17C0003E3B35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Kontalk copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kontalk",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FlagPhoneNumber\"",
+					"-framework",
+					"\"IDZSwiftCommonCrypto\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"ObjectivePGP\"",
+					"-framework",
+					"\"RAMAnimatedTabBarController\"",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SecurityExtensions\"",
+					"-framework",
+					"\"SwiftEventBus\"",
+					"-framework",
+					"\"SwiftyBeaver\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"libPhoneNumber_iOS\"",
+					"-weak_framework",
+					"\"Security\"",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kontalk.KontalkDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kontalk/XMPP/Kontalk-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		65C1C27221B2F29D0068F728 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -754,7 +1052,7 @@
 		};
 		65C1C27521B2F29D0068F728 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D0A4FC884B6994C5641620C /* Pods-Kontalk.debug.xcconfig */;
+			baseConfigurationReference = 623C4BB277CB7555D01EF945 /* Pods-Kontalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -834,7 +1132,7 @@
 		};
 		65C1C27621B2F29D0068F728 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19289DB15EDE47133E6370C7 /* Pods-Kontalk.release.xcconfig */;
+			baseConfigurationReference = 13155F5A815AAF8DC20AAC43 /* Pods-Kontalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -996,6 +1294,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		65ABE570220F17C0003E3B35 /* Build configuration list for PBXNativeTarget "Kontalk Debug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65ABE571220F17C0003E3B35 /* Debug */,
+				65ABE572220F17C0003E3B35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		65C1C24421B2F29C0068F728 /* Build configuration list for PBXProject "Kontalk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -51,8 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TODO REMOVE
         xmppStream.hostName = "prime.kontalk.net"
         xmppStream.hostPort = 7222
-//        xmppStream.hostPort = 7223
-        
         xmppStream.startTLSPolicy = XMPPStreamStartTLSPolicy.preferred
         
         /*let xmppRosterStorage = XMPPRosterCoreDataStorage()
@@ -63,12 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //xmppRoster.addDelegate(self, delegateQueue: DispatchQueue.main)
         
         xmppStream.myJID = XMPPJID(string: "prime@prime.kontalk.net")
-        
-        /*do {
-            try xmppStream.connect(withTimeout: 10000)
-        } catch {
-            log.error("could not connect")
-        }*/
+
+        var identity: AnyObject?
+        let searchQuery: NSMutableDictionary = NSMutableDictionary(objects: [String(kSecClassIdentity), kCFBooleanTrue], forKeys: [String(kSecClass) as NSCopying,String(kSecReturnRef) as NSCopying])
+        let status:OSStatus = SecItemCopyMatching(searchQuery as CFDictionary, &identity)
+        if (identity != nil) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let chatVC = storyboard.instantiateViewController(withIdentifier: "Chat") as! ViewController
+            self.window?.rootViewController = chatVC
+        }
         
         return true
     }

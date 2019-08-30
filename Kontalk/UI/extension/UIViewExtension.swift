@@ -26,6 +26,13 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
+    
+    func updateConstraint(attribute: NSLayoutConstraint.Attribute, constant: CGFloat) -> Void {
+        if let constraint = (self.constraints.filter{$0.firstAttribute == attribute}.first) {
+            constraint.constant = constant
+            self.setNeedsLayout()
+        }
+    }
 }
 
 extension UIViewController {

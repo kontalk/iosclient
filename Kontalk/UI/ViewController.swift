@@ -13,13 +13,64 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, XMPPStreamDelegate {
+    
+    var xmppStream: XMPPStream?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        xmppStream = AppDelegate.shared.xmppStream
+        xmppStream?.addDelegate(self, delegateQueue: DispatchQueue.main)
+        
+        do {
+            try self.xmppStream?.connect(withTimeout: 10000)
+        } catch {
+            log.error("could not connect")
+        }
+    }
+    
+    func xmppStreamDidConnect(_ sender: XMPPStream) {
+        var auth = XMPPExternalAuthentication.init(stream: xmppStream!, password: "")
+        do {
+            try xmppStream?.authenticate(auth)
+            
+            
+        } catch {
+            log.error("Errore autenticazione")
+        }
     }
 
-
+    func xmppStream(_ sender: XMPPStream, willSecureWithSettings settings: NSMutableDictionary) {
+        var identity: AnyObject?
+        let searchQuery: NSMutableDictionary = NSMutableDictionary(objects: [String(kSecClassIdentity), kCFBooleanTrue], forKeys: [String(kSecClass) as NSCopying,String(kSecReturnRef) as NSCopying])
+        let status:OSStatus = SecItemCopyMatching(searchQuery as CFDictionary, &identity)
+        
+        settings.setValue([identity as! SecIdentity], forKey: kCFStreamSSLCertificates as NSString as String)
+        
+        settings.setValue(xmppStream?.myJID?.domain, forKey: kCFStreamSSLPeerName as NSString as String)
+        
+        settings.setValue(SSLAuthenticate.alwaysAuthenticate.rawValue, forKey: GCDAsyncSocketSSLClientSideAuthenticate)
+        
+        settings.setValue(true, forKey: GCDAsyncSocketManuallyEvaluateTrust)
+        
+    }
+    
+    func xmppStream(_ sender: XMPPStream, didReceive trust: SecTrust, completionHandler: @escaping (Bool) -> Void) {
+        
+        //        DispatchQueue.global(qos: .default).async {
+        //            var result: SecTrustResultType =  kSecTrustResultDeny as! SecTrustResultType
+        //            let status = SecTrustEvaluate(trust, &result)
+        //
+        //            if status == noErr {
+        //                completionHandler(true)
+        //            } else {
+        //                completionHandler(false)
+        //            }
+        //        }
+        
+        completionHandler(true)
+    }
 }
 

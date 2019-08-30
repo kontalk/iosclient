@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param sender XMPPRegistration object invoking this delegate method.
  */
-- (void)numberValidationSuccessful:(XMPPRegistration *)sender;
+- (void)numberValidationSuccessful:(XMPPRegistration *)sender :(NSString *) challengeType;
 - (void)numberValidationFailed:(XMPPRegistration *)sender withError:(nullable DDXMLElement *)error;
 - (void)codeValidationSuccessful:(XMPPRegistration *)sender :(NSString *)publicKey;
 - (void)codeValidationFailed:(XMPPRegistration *)sender withError:(nullable DDXMLElement *)error;

@@ -16,6 +16,7 @@ target 'Kontalk' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage', '~> 3.5'
   pod 'SwiftEventBus', :tag => '3.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
   
   pod 'SecurityExtensions'
@@ -28,6 +29,7 @@ target 'Kontalk' do
   pod "FlagPhoneNumber"
   pod 'RAMAnimatedTabBarController'
   pod 'NVActivityIndicatorView'
+  pod "AvatarImageView", '~> 2.2.0'
   
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'

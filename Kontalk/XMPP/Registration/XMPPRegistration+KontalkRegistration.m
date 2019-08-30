@@ -209,7 +209,15 @@
             NSString *type = [iq type];
             
             if ([type isEqualToString:@"result"]) {
-                [multicastDelegate numberValidationSuccessful:self];
+                DDXMLElement *query = [iq elementForName:@"query"];
+                DDXMLElement *x = [query elementForName:@"x"];
+                NSArray<DDXMLElement *> *fields = [x elementsForName:@"field"];
+                for (DDXMLElement *field in fields) {
+                    NSString *var = [field attributeStringValueForName:@"var"];
+                    if ([var isEqualToString:@"challenge"]) {
+                        [multicastDelegate numberValidationSuccessful:self :[field stringValue]];
+                    }
+                }
             } else {
                 // this should be impossible to reach, but just for safety's sake...
                 [multicastDelegate numberValidationFailed:self withError:nil];

@@ -18,6 +18,7 @@ import FlagPhoneNumber
 import RxSwift
 import RxCocoa
 import libPhoneNumber_iOS
+import PassKit
 
 class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, XMPPStreamDelegate, KontalkRegistrationDelegate {
     
@@ -34,6 +35,14 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var payButton = PKAddPassButton.init(addPassButtonStyle: .black)
+        self.view.addSubview(payButton)
+        
+        
+//        var identity: AnyObject?
+//        let searchQuery: NSMutableDictionary = NSMutableDictionary(objects: [String(kSecClassIdentity), kCFBooleanTrue], forKeys: [String(kSecClass) as NSCopying,String(kSecReturnRef) as NSCopying])
+//        let status:OSStatus = SecItemCopyMatching(searchQuery as CFDictionary, &identity)
         
         xmppStream = AppDelegate.shared.xmppStream
         
@@ -114,11 +123,12 @@ class NumberValidationViewController: BaseViewController, FPNTextFieldDelegate, 
         kontalkRegister.numberValidation(numberTextField.getFormattedPhoneNumber(format: .E164) ?? "", acceptTerms: true, forceRegistration: false)
     }
     
-    func numberValidationSuccessful(_ sender: XMPPRegistration) {
+    func numberValidationSuccessful(_ sender: XMPPRegistration, _ challengeType: String) {
         hideLoader()
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Registration", bundle: nil)
         let codeValidationViewController = storyBoard.instantiateViewController(withIdentifier: "codeValidationViewController") as! CodeValidationViewController
         codeValidationViewController.phoneNumber = numberTextField.getFormattedPhoneNumber(format: .E164)
+        codeValidationViewController.challengeType = challengeType
         self.navigationController?.pushViewController(codeValidationViewController, animated: true)
     }
     
